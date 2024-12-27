@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodPanda Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #d11450, #e31837);
+            padding: 1rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            padding: 15px;
+            width: 500px;
+            border-radius: 30px;
+            border: none;
+            font-size: 16px;
+        }
+
+        .restaurants {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .restaurant-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .restaurant-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .restaurant-info {
+            padding: 1rem;
+        }
+
+        .restaurant-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .restaurant-cuisine {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .restaurant-rating {
+            color: #e31837;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">FoodPanda Clone</div>
+        <div class="nav-links">
+            <a href="index.php">Home</a>
+            <a href="login.php">Login</a>
+            <a href="register.php">Register</a>
+            <a href="cart.php">Cart</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>New Year Special Discount</h1>
+            <input type="text" class="search-bar" placeholder="Search for restaurants or cuisines...">
+        </div>
+    </div>
+
+    <div class="restaurants">
+         
+            <!-- Chicken Corn Soup -->
+            <div class='restaurant-card' onclick='window.location.href="restaurant.php?id=1"'>
+                <img src='https://images.unsplash.com/photo-1606787631895-72d1cbefda0b' class='restaurant-image' alt='Chicken Corn Soup'>
+                <div class='restaurant-info'>
+                    <div class='restaurant-name'>Chicken Corn Soup</div>
+                    <div class='restaurant-cuisine'>Soup</div>
+                    <div class='restaurant-rating'>★ 4.6 • 15-20 min</div>
+                </div>
+            </div>
+
+            <!-- Japanese Tom Yum Soup -->
+            <div class='restaurant-card' onclick='window.location.href="restaurant.php?id=2"'>
+                <img src='https://images.unsplash.com/photo-1579574471069-dde6b99a0734' class='restaurant-image' alt='Japanese Tom Yum Soup'>
+                <div class='restaurant-info'>
+                    <div class='restaurant-name'>Japanese Tom Yum Soup</div>
+                    <div class='restaurant-cuisine'>Soup</div>
+                    <div class='restaurant-rating'>★ 4.4 • 20-25 min</div>
+                </div>
+            </div>
+
+            <!-- McDonald's -->
+            <div class='restaurant-card' onclick='window.location.href="restaurant.php?id=3"'>
+                <img src='https://images.unsplash.com

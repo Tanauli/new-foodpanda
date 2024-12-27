@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodPanda Clone - Order Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #d11450;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #b31040;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Place Your Order</h2>
+        <form id="orderForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod">
+                <option value="Debit/Credit Card">Debit/Credit Card</option>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+            </select>
+
+            <button type="button" onclick="submitOrder()">Submit Order</button>
+        </form>
+    </div>
+
+    <script>
+        function submitOrder() {
+            const form = document.getElementById('orderForm');
+            const order = {
+                name: form.name.value,
+                address: form.address.value,
+                paymentMethod: form.paymentMethod.value,
+                deliveryTime: "15 minutes"
+            };
+
+            // Simulate storing the order in local storage
+            localStorage.setItem('order', JSON.stringify(order));
+
+            // Display confirmation with estimated delivery time
+            alert('Order placed successfully! Your delivery will arrive in approximately ' + order.deliveryTime + '.\n' + JSON.stringify(order, null, 4));
+        }
+    </script>
+</body>
+</html>
